@@ -10,21 +10,21 @@ import Foundation
 import Moya
 import Result
 
-//enum HttpRequestType {
-//    case get
-//    case post
-//}
+public enum HttpRequestType {
+    case get
+    case post
+}
 
-enum HttpResponseType {
+public enum HttpResponseType {
     case string
     case json
 }
 
-open class HttpUtils<T:TargetType> {
-    typealias SuccessHandler = (Any) -> Void
-    typealias FailureHandler = (NSError) -> Void
+public class HttpUtils<T:TargetType> {
+    public typealias SuccessHandler = (Any) -> Void
+     public typealias FailureHandler = (NSError) -> Void
     
-//    var method:HttpRequestType = .get
+    var method:HttpRequestType = .get
     var respType : HttpResponseType = .json
     
     var succsessHandler : SuccessHandler?
@@ -37,22 +37,22 @@ open class HttpUtils<T:TargetType> {
 
 // 属性设置
 extension HttpUtils {
-//    func method ( _ method : HttpRequestType) -> Self {
-//        self.method = method
-//        return self
-//    }
+   public func method ( _ method : HttpRequestType) -> Self {
+        self.method = method
+        return self
+    }
     
-    func responType ( _ respType : HttpResponseType) -> Self {
+    public func responType ( _ respType : HttpResponseType) -> Self {
         self.respType = respType
         return self
     }
     
-    func successHandler ( _ successHandler :@escaping SuccessHandler ) -> Self {
+    public func successHandler ( _ successHandler :@escaping SuccessHandler ) -> Self {
         self.succsessHandler = successHandler
         return self
     }
     
-    func failureHandler ( _ failureHandler : @escaping FailureHandler) -> Self {
+     public func failureHandler ( _ failureHandler : @escaping FailureHandler) -> Self {
         self.failureHandler = failureHandler
         return self
     }
@@ -61,7 +61,7 @@ extension HttpUtils {
 
 // 请求
 extension HttpUtils {
-    func request(target: T) -> Void{
+    public func request(target: T) -> Void{
         let provider = MoyaProvider<T>()
         provider.request(target) { result in
             switch result {
@@ -93,9 +93,9 @@ extension HttpUtils {
 }
 
 
-open class YD_DataResponse {
-    typealias HttpResult = Moya.Response
-    typealias JSONRespHandler = (_ json:Dictionary<String,Any>, _ error:Error) -> Void
+public class YD_DataResponse {
+    public typealias HttpResult = Moya.Response
+    public typealias JSONRespHandler = (_ json:Dictionary<String,Any>, _ error:Error) -> Void
     var result : HttpResult?
     var error:Error?
     init(result:HttpResult? ,error:Error?) {
@@ -103,7 +103,7 @@ open class YD_DataResponse {
         self.error = error
     }
     
-    func jsonResponse( handler: @escaping JSONRespHandler) -> Void {
+    public func jsonResponse( handler: @escaping JSONRespHandler) -> Void {
         
     }
 }
