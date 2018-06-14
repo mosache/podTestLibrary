@@ -30,9 +30,7 @@ public class HttpUtils<T:TargetType> {
     var succsessHandler : SuccessHandler?
     var failureHandler : FailureHandler?
     
-
-    
-   
+    public init(){}
 }
 
 // 属性设置
