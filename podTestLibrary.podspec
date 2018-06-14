@@ -5,12 +5,10 @@
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
 #
-
 Pod::Spec.new do |s|
   s.name             = 'podTestLibrary'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of podTestLibrary.'
-
+  s.summary          = 'my test'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
@@ -21,11 +19,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/330256579@qq.com/podTestLibrary'
+  s.homepage         = 'https://github.com/mosache/podTestLibrary.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '330256579@qq.com' => '330256579@qq.com' }
-  s.source           = { :git => 'https://github.com/330256579@qq.com/podTestLibrary.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/mosache/podTestLibrary.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -37,6 +35,7 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Foundation'
+  s.dependency 'Moya'
+  s.swift_version  = '4.0'
 end
